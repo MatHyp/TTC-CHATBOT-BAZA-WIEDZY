@@ -26,7 +26,6 @@ Celem projektu jest stworzenie **aplikacji medycznej**, składającej się z nas
 
 ## 🏗️ Architektura Systemu (RAG Pipeline)
 
-Projekt został zaprojektowany w architekturze.  
 Poniższy diagram przedstawia pełen **przepływ danych (Data Flow)** — od momentu wpisania objawów przez użytkownika, aż do wygenerowania odpowiedzi przez model LLM.
 
 ```mermaid
