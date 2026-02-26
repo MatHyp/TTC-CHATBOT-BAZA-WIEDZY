@@ -10,14 +10,7 @@ function Chat({className}) {
   return (
 
 		<div className={className}>
-			<div className={style.response}>
-			
-			
-			</div>
-			<div className={style.promptInput}>
-		
-				<InputText/>
-			</div>
+			<InputText/>
 		</div>
   );
 }
