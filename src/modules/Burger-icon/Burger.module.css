@@ -22,5 +22,35 @@
 	position:absolute;
 	left:5vh;
 	top:5vh;
-	transition:all 100ms ease;
+	transition:all 200ms ease-in-out;
+}
+.BurgerCliked
+{
+			position:absolute;
+			left:34vh;
+			top:4vh;
+			
+	
+}
+@media(max-width:1650px) and (orientation: portrait)
+{
+	.BurgerCliked
+	{
+			position:absolute;
+			left:20vh;
+			top:4vh;
+			background-color:blue;
+	}
+	
+	
+	
+	
+}
+@media  (orientation: landscape) and max-width:1650px {
+	.BurgerCliked
+	{
+			position:absolute;
+			left:20vh;
+			top:4vh;
+	}
 }
