@@ -1,6 +1,6 @@
 import style from "./Messages.module.css";
 
-export  function Sender(props) {
+export  function UserMes(props) {
 	
 	
 	
@@ -13,7 +13,7 @@ export  function Sender(props) {
 		</div>
   );
 }
-export  function Reciver(props) {
+export  function AiMes(props) {
 	
 	
 	

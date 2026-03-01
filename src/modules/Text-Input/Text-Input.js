@@ -11,7 +11,12 @@ function TextInput(props) {
 		setSearchText(e.target.value);
   };
 	
-	
+  const handleSend = (e) => {
+    e.preventDefault(); // blokuje submit
+    if (!searchText.trim()) return;
+    props.SendPrompt(searchText); // wywołanie funkcji w Chat.js
+    setSearchText("");            // czyszczenie inputa
+  };
 	
 	
   return (
@@ -25,7 +30,7 @@ function TextInput(props) {
           onChange={handleChangeSearch}
           value={searchText}
         />
-		<button onClick={props.SendPrompt}className={style.SendPrompt}><i class="icon-paper-plane"></i></button>
+		<button onClick={handleSend}className={style.SendPrompt}><i class="icon-paper-plane"></i></button>
 			
 			</form>
 		

@@ -1,36 +1,50 @@
 import InputText from "./../../modules/Text-Input/Text-Input.js";
 import style from "./chat.module.css";
-import {Sender , Reciver} from "../../modules/Messages/Messages";
+import {UserMes , AiMes} from "../../modules/Messages/Messages";
 import { useState } from "react";
 function Chat({className}) {
+const [messages, setMessages] = useState([
+  {
+    userText: "Cześć, AI!",
+    aiResponse: "hello",  
+    date: new Date().getTime()
+  },
+    {
+    userText: "Cześć, AI!",
+    aiResponse: "hello",  
+    date: new Date().getTime()
+  }
+]);
+const sortedMessages = [...messages].sort((a, b) => a.date - b.date);	
 	
-	const SendMess = () =>
-	{
-		
-		
-	}
-	
-	
-	
-  return (
+const SendMess = (text) => {
+  if (!text.trim()) return; // ignoruj puste wiadomości
 
-		<div className={className}>
-			<div className={style.chatBox}>
-				<Sender Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut erat ac augue blandit ullamcorper eu at elit. Etiam pellentesque elit vitae mi consequat, non interdum lorem imperdiet. Quisque cursus condimentum varius. Proin sit amet viverra lorem. Etiam eget tortor dolor. Maecenas eget bibendum odio. Donec hendrerit felis nec leo sagittis, at fermentum justo sagittis. Etiam posuere dolor massa, a feugiat ligula lacinia eget. Nam quis sem elit. Morbi egestas nibh ante, ac pellentesque diam dapibus ut. Nullam commodo ex nec malesuada porttitor. Nulla lobortis orci at velit tristique rhoncus. Nulla gravida nisi eu nisi tincidunt malesuada.Quisque lorem augue, sollicitudin scelerisque porttitor at, interdum nec tortor. Nam sed dapibus augue, sagittis sodales risus. Vivamus non finibus augue. Etiam eu aliquet turpis. Cras rutrum in justo sed dictum. Fusce quis lobortis lectus. Proin congue dui ante. Quisque quis lobortis quam. Nullam lorem nibh, tincidunt ac varius eu, molestie non nibh"/>
-				<Reciver Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut erat ac augue blandit ullamcorper eu at elit. Etiam pellentesque elit vitae mi consequat, non interdum lorem imperdiet. Quisque cursus condimentum varius. Proin sit amet viverra lorem. Etiam eget tortor dolor. Maecenas eget bibendum odio. Donec hendrerit felis nec leo sagittis, at fermentum justo sagittis. Etiam posuere dolor massa, a feugiat ligula lacinia eget. Nam quis sem elit. Morbi egestas nibh ante, ac pellentesque diam dapibus ut. Nullam commodo ex nec malesuada porttitor. Nulla lobortis orci at velit tristique rhoncus. Nulla gravida nisi eu nisi tincidunt malesuada.Quisque lorem augue, sollicitudin scelerisque porttitor at, interdum nec tortor. Nam sed dapibus augue, sagittis sodales risus. Vivamus non finibus augue. Etiam eu aliquet turpis. Cras rutrum in justo sed dictum. Fusce quis lobortis lectus. Proin congue dui ante. Quisque quis lobortis quam. Nullam lorem nibh, tincidunt ac varius eu, molestie non nibh"/>
-				<Sender Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut erat ac augue blandit ullamcorper eu at elit. Etiam pellentesque elit vitae mi consequat, non interdum lorem imperdiet. Quisque cursus condimentum varius. Proin sit amet viverra lorem. Etiam eget tortor dolor. Maecenas eget bibendum odio. Donec hendrerit felis nec leo sagittis, at fermentum justo sagittis. Etiam posuere dolor massa, a feugiat ligula lacinia eget. Nam quis sem elit. Morbi egestas nibh ante, ac pellentesque diam dapibus ut. Nullam commodo ex nec malesuada porttitor. Nulla lobortis orci at velit tristique rhoncus. Nulla gravida nisi eu nisi tincidunt malesuada.Quisque lorem augue, sollicitudin scelerisque porttitor at, interdum nec tortor. Nam sed dapibus augue, sagittis sodales risus. Vivamus non finibus augue. Etiam eu aliquet turpis. Cras rutrum in justo sed dictum. Fusce quis lobortis lectus. Proin congue dui ante. Quisque quis lobortis quam. Nullam lorem nibh, tincidunt ac varius eu, molestie non nibh"/>
-				<Reciver Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut erat ac augue blandit ullamcorper eu at elit. Etiam pellentesque elit vitae mi consequat, non interdum lorem imperdiet. Quisque cursus condimentum varius. Proin sit amet viverra lorem. Etiam eget tortor dolor. Maecenas eget bibendum odio. Donec hendrerit felis nec leo sagittis, at fermentum justo sagittis. Etiam posuere dolor massa, a feugiat ligula lacinia eget. Nam quis sem elit. Morbi egestas nibh ante, ac pellentesque diam dapibus ut. Nullam commodo ex nec malesuada porttitor. Nulla lobortis orci at velit tristique rhoncus. Nulla gravida nisi eu nisi tincidunt malesuada.Quisque lorem augue, sollicitudin scelerisque porttitor at, interdum nec tortor. Nam sed dapibus augue, sagittis sodales risus. Vivamus non finibus augue. Etiam eu aliquet turpis. Cras rutrum in justo sed dictum. Fusce quis lobortis lectus. Proin congue dui ante. Quisque quis lobortis quam. Nullam lorem nibh, tincidunt ac varius eu, molestie non nibh"/>
-				<Sender Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut erat ac augue blandit ullamcorper eu at elit. Etiam pellentesque elit vitae mi consequat, non interdum lorem imperdiet. Quisque cursus condimentum varius. Proin sit amet viverra lorem. Etiam eget tortor dolor. Maecenas eget bibendum odio. Donec hendrerit felis nec leo sagittis, at fermentum justo sagittis. Etiam posuere dolor massa, a feugiat ligula lacinia eget. Nam quis sem elit. Morbi egestas nibh ante, ac pellentesque diam dapibus ut. Nullam commodo ex nec malesuada porttitor. Nulla lobortis orci at velit tristique rhoncus. Nulla gravida nisi eu nisi tincidunt malesuada.Quisque lorem augue, sollicitudin scelerisque porttitor at, interdum nec tortor. Nam sed dapibus augue, sagittis sodales risus. Vivamus non finibus augue. Etiam eu aliquet turpis. Cras rutrum in justo sed dictum. Fusce quis lobortis lectus. Proin congue dui ante. Quisque quis lobortis quam. Nullam lorem nibh, tincidunt ac varius eu, molestie non nibh"/>
-				<Reciver Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut erat ac augue blandit ullamcorper eu at elit. Etiam pellentesque elit vitae mi consequat, non interdum lorem imperdiet. Quisque cursus condimentum varius. Proin sit amet viverra lorem. Etiam eget tortor dolor. Maecenas eget bibendum odio. Donec hendrerit felis nec leo sagittis, at fermentum justo sagittis. Etiam posuere dolor massa, a feugiat ligula lacinia eget. Nam quis sem elit. Morbi egestas nibh ante, ac pellentesque diam dapibus ut. Nullam commodo ex nec malesuada porttitor. Nulla lobortis orci at velit tristique rhoncus. Nulla gravida nisi eu nisi tincidunt malesuada.Quisque lorem augue, sollicitudin scelerisque porttitor at, interdum nec tortor. Nam sed dapibus augue, sagittis sodales risus. Vivamus non finibus augue. Etiam eu aliquet turpis. Cras rutrum in justo sed dictum. Fusce quis lobortis lectus. Proin congue dui ante. Quisque quis lobortis quam. Nullam lorem nibh, tincidunt ac varius eu, molestie non nibh"/>
-				<Sender Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut erat ac augue blandit ullamcorper eu at elit. Etiam pellentesque elit vitae mi consequat, non interdum lorem imperdiet. Quisque cursus condimentum varius. Proin sit amet viverra lorem. Etiam eget tortor dolor. Maecenas eget bibendum odio. Donec hendrerit felis nec leo sagittis, at fermentum justo sagittis. Etiam posuere dolor massa, a feugiat ligula lacinia eget. Nam quis sem elit. Morbi egestas nibh ante, ac pellentesque diam dapibus ut. Nullam commodo ex nec malesuada porttitor. Nulla lobortis orci at velit tristique rhoncus. Nulla gravida nisi eu nisi tincidunt malesuada.Quisque lorem augue, sollicitudin scelerisque porttitor at, interdum nec tortor. Nam sed dapibus augue, sagittis sodales risus. Vivamus non finibus augue. Etiam eu aliquet turpis. Cras rutrum in justo sed dictum. Fusce quis lobortis lectus. Proin congue dui ante. Quisque quis lobortis quam. Nullam lorem nibh, tincidunt ac varius eu, molestie non nibh"/>
-				<Reciver Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut erat ac augue blandit ullamcorper eu at elit. Etiam pellentesque elit vitae mi consequat, non interdum lorem imperdiet. Quisque cursus condimentum varius. Proin sit amet viverra lorem. Etiam eget tortor dolor. Maecenas eget bibendum odio. Donec hendrerit felis nec leo sagittis, at fermentum justo sagittis. Etiam posuere dolor massa, a feugiat ligula lacinia eget. Nam quis sem elit. Morbi egestas nibh ante, ac pellentesque diam dapibus ut. Nullam commodo ex nec malesuada porttitor. Nulla lobortis orci at velit tristique rhoncus. Nulla gravida nisi eu nisi tincidunt malesuada.Quisque lorem augue, sollicitudin scelerisque porttitor at, interdum nec tortor. Nam sed dapibus augue, sagittis sodales risus. Vivamus non finibus augue. Etiam eu aliquet turpis. Cras rutrum in justo sed dictum. Fusce quis lobortis lectus. Proin congue dui ante. Quisque quis lobortis quam. Nullam lorem nibh, tincidunt ac varius eu, molestie non nibh"/>
-			
-			</div>
-			<div className={style.promptInput} SendPrompt={SendMess}>
-		
-				<InputText/>
-			</div>
-		</div>
+  const newMessage = {
+    userText: text,        // tekst od użytkownika
+    aiResponse: "",        // póki co pusty
+    date: Date.now()       // aktualny timestamp
+  };
+
+  // dodajemy do stanu
+  setMessages(prevMessages => [...prevMessages, newMessage]);
+};
+  return (
+    <div className={className}>
+      <div className={style.chatBox}>
+		  {/*Wyswietla Prompty i odpowiedzi z messages(6 linijka obecnie)*/}
+		{sortedMessages.map((msg, index) => (
+		  <> 
+			<UserMes key={`user-${index}`} Text={msg.userText} />
+			{msg.aiResponse && <AiMes key={`ai-${index}`} Text={msg.aiResponse} />}
+		  </>
+		))}
+      </div>
+
+      <div className={style.promptInput} >
+        <InputText SendPrompt={SendMess} />
+      </div>
+    </div>
   );
 }
 
