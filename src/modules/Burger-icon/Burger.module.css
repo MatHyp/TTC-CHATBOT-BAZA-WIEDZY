@@ -2,7 +2,7 @@
 {
 	width:3dvh;
 	height:0.5dvh;
-	background-color:black;
+	background-color:var(--font-color2);
 	margin-top:0.5dvh;
 	
 	
@@ -12,9 +12,9 @@
 {
 	margin:0;
 }
-.Burger:hover .Burgerline {
-  transform: rotate(1deg);
-  height: 0.6dvh;
+.Burger:hover .Burgerline{
+		background-color:var(--font-color1);
+	
 }
 .Burger
 {

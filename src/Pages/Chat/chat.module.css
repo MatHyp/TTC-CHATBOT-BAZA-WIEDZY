@@ -10,14 +10,14 @@
 	flex-direction:column;
 	gap:5vh;
 	height:84dvh;
-	background-color:gray;
+	background-color:var(--primary-color);
 	margin-bottom:1dvh;
 	overflow-y: auto;  
 	padding:0 5vh 0 5vh;
 }
 .chatBox::-webkit-scrollbar
 {
-	background-color:#696969
+	background-color:var(--primary-color);
 }
 
 /* width */
@@ -27,7 +27,7 @@
 
 /* Track */
 .chatBox::-webkit-scrollbar-track {
-  background: #696969;
+  background: var(--primary-color);;
 }
 
 /* Handle */

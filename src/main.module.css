@@ -22,13 +22,13 @@
 }
 .API
 {
-	background-color:#696969;
+	background-color:var(--primary-color);
 	flex-grow:1;
 	
 }
 .Login
 {
-	background-color:#696969;
+	background-color:var(--primary-color);
 	flex-grow:1;
 
 	
@@ -43,4 +43,19 @@
 	margin-top:500px;
 
 	
+}
+body
+{
+	background-color:var(--primary-color);
+}
+:root {
+  --primary-color: #212121; 
+  --secondary-color:#181818;
+  --action-color: #303030;
+  --additional-color:#6A706E;
+  --font-color1:#fff;
+  --font-color2:#ddd;
+  --color-chat-ai:white;
+  --color-chat-user:white;
+  --color-chat-prompt:white;
 }

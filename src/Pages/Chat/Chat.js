@@ -35,8 +35,8 @@ const SendMess = (text) => {
 		  {/*Wyswietla Prompty i odpowiedzi z messages(6 linijka obecnie)*/}
 		{sortedMessages.map((msg, index) => (
 		  <> 
-			<UserMes key={id} Text={msg.userText} />
-			{msg.aiResponse && <AiMes kkey={id} Text={msg.aiResponse} />}
+			<UserMes mesDate={msg.date} key={id} Text={msg.userText} />
+			{msg.aiResponse && <AiMes kkey={id}  Text={msg.aiResponse} />}
 		  </>
 		))}
       </div>

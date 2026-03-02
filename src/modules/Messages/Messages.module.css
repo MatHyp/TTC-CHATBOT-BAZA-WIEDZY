@@ -1,9 +1,9 @@
 .Smes
 {
 
-	
+	color:#eee;
 	margin-left:auto;
-	background-color:red;
+	background-color:var(--action-color);
 	word-wrap: break-word;
     overflow-wrap: break-word;
 	
@@ -16,9 +16,9 @@ p
 .Rmes
 {
 
-	
+	color:var(--font-color1);
 	margin-right:auto;
-	background-color:blue;
+	background-color:var(--primary-color);
 	word-wrap: break-word;
     overflow-wrap: break-word;
 	
@@ -30,6 +30,7 @@ p
 	width:min(80%,80vh);
 	border-radius:2rem;
 	padding:min(5vh,5%);
+	position:relative;
 	font-size: clamp(1rem, calc(1vh + 1rem), 3rem);
 	
 	
@@ -45,6 +46,17 @@ margin-top:50px;
 {
 	
 margin-bottom:50px;
+	
+	
+}
+.mesDate
+{
+	position:Absolute;
+	right:1rem;
+	top:1rem;
+	font-size:0.8rem;
+	
+	
 	
 	
 }
