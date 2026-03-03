@@ -1,0 +1,76 @@
+.Smes
+{
+
+	color:#eee;
+	margin-left:auto;
+	background-color:var(--action-color);
+	word-wrap: break-word;
+    overflow-wrap: break-word;
+	
+	
+}
+p
+{
+	margin:0;
+}
+.Rmes
+{
+
+	color:var(--font-color1);
+	margin-right:auto;
+	background-color:var(--primary-color);
+	word-wrap: break-word;
+    overflow-wrap: break-word;
+	
+	
+}
+.mes
+{
+	--border-radius-v:2rem;
+	width:min(80%,80vh);
+	border-radius:var(--border-radius-v);
+	padding:min(5vh,5%);
+	position:relative;
+	font-size: clamp(1rem, calc(1vh + 1rem), 3rem);
+	
+	
+}
+.mes:first-child
+{
+	
+margin-top:50px;
+	
+	
+}
+.mes:last-child
+{
+	
+margin-bottom:50px;
+	
+	
+}
+.mesDate
+{
+	position:Absolute;
+	right:1rem;
+	top:1rem;
+	font-size:0.8rem;
+	
+	
+	
+	
+}
+.WFRespon2d::after
+{
+	position:absolute;
+	height:100%;
+	width:100%;
+	background-color:red;
+	content:"";
+	left:0;
+	top:0;
+	border-radius:var(--border-radius-v);
+
+	
+	
+}

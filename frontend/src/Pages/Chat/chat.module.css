@@ -1,0 +1,42 @@
+.promptInput
+{
+	text-align:center;
+	
+	
+}
+.chatBox
+{
+	display:flex;
+	flex-direction:column;
+	gap:5vh;
+	height:84dvh;
+	background-color:var(--primary-color);
+	margin-bottom:1dvh;
+	overflow-y: auto;  
+	padding:0 5vh 0 5vh;
+}
+.chatBox::-webkit-scrollbar
+{
+	background-color:var(--primary-color);
+}
+
+/* width */
+.chatBox::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.chatBox::-webkit-scrollbar-track {
+  background: var(--primary-color);;
+}
+
+/* Handle */
+.chatBox::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius:2vh; 	
+}
+
+/* Handle on hover */
+.chatBox::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}

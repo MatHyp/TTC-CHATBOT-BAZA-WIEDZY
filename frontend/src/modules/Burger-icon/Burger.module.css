@@ -1,0 +1,28 @@
+.Burgerline
+{
+	width:3dvh;
+	height:0.5dvh;
+	background-color:var(--font-color2);
+	margin-top:0.5dvh;
+	
+	
+	cursor: pointer;
+}
+.Burgerline:first-child
+{
+	margin:0;
+}
+.Burger:hover .Burgerline{
+		background-color:var(--font-color1);
+	
+}
+.Burger
+{
+	cursor: pointer;
+	position:absolute;
+	transition:all 200ms ease-in-out;
+}
+.ItemDisplayNone
+{
+	display:none;
+}

@@ -1,14 +1,61 @@
 .SideBar
 {
 	
-	width:20%;
-	height:100%;
-	display:inline-block;
+	
+	height:100dvh;
+	
+	
 	
 }
 .Chat
 {
-	display:inline-block;
-	width:70%;
 	
+	flex-grow:1;
+	
+}
+.MainDiv
+{
+	
+	display:flex;
+	flex-direction: row;
+	
+}
+.API
+{
+	background-color:var(--primary-color);
+	flex-grow:1;
+	
+}
+.Login
+{
+	background-color:var(--primary-color);
+	flex-grow:1;
+
+	
+}
+.API h1
+{
+  margin-top:500px;
+	
+}
+.Login h1
+{
+	margin-top:500px;
+
+	
+}
+body
+{
+	background-color:var(--primary-color);
+}
+:root {
+  --primary-color: #212121; 
+  --secondary-color:#181818;
+  --action-color: #303030;
+  --additional-color:#6A706E;
+  --font-color1:#fff;
+  --font-color2:#ddd;
+  --color-chat-ai:white;
+  --color-chat-user:white;
+  --color-chat-prompt:white;
 }

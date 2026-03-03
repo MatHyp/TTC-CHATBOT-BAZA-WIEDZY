@@ -1,20 +1,45 @@
-input
+.textInput
 {
 	width:90%;
 	margin-left:auto;
 	margin-right:auto;
 	color:gray;
-	background-color:#333333;
+	background-color:var(--action-color);
 	border-radius:30px;
 	height:50px;
 	font-size:20px;
 	color:#FeFeFe;
 	padding:0px 10px 0px 10px;
+	anchor-name:--text-Input;
 	
 }
-input::placeholder
+.textInput::placeholder
 {
 	color:#F9F9F9;
 	text-align:center;
 	
+}
+.SendPrompt
+{
+	position:absolute;
+	position-anchor:--text-Input;
+	right: anchor(right);
+	top: anchor(center);
+	transform: translateY(-50%) translateX(-5%);
+	opacity:0.8;
+	height:50px;
+	width:50px;
+	padding:0;
+	border-radius:30px;
+	transition: all 100ms ease-in-out;
+}
+.SendPrompt:hover
+{
+	background-color:#bbb;
+	color:#333;
+}
+.SendPrompt:active
+{
+	background-color:#333;
+	color:#bbb;
 }

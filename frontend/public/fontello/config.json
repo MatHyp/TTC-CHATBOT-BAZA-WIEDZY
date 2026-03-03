@@ -1,0 +1,30 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "38575a803c4da31ce20d77e1e1236bcb",
+      "css": "paper-plane",
+      "code": 61912,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "06fddec6d1c1417426e650f07393e616",
+      "css": "cinema-chair-svgrepo-com-(2)",
+      "code": 59392,
+      "src": "custom_icons",
+      "selected": false,
+      "svg": {
+        "path": "M11.4 1.9H18.6A3.6 3.6 0 0 1 22.2 5.4V17.4L22.2 17.4H7.8L7.8 17.4V5.5A3.6 3.6 0 0 1 11.4 1.9ZM1.9 12.6H7.8L7.8 12.6V16.8A3 3 0 0 1 4.8 19.8H4.8A3 3 0 0 1 1.9 16.8V12.6L1.9 12.6ZM22.2 12.6H28.1L28.1 12.6V16.8A3 3 0 0 1 25.1 19.8H25.1A3 3 0 0 1 22.1 16.8V12.6A0 0 90 0 1 22.2 12.6ZM5.8 19.6H5.8A2.6 2.6 0 0 0 5.5 20.8 2.5 2.5 0 0 0 8 23.3H22A2.5 2.5 0 0 0 24.5 20.8 2.6 2.6 0 0 0 24.2 19.6L24.2 19.6",
+        "width": 1000
+      },
+      "search": [
+        "cinema-chair-svgrepo-com-(2)"
+      ]
+    }
+  ]
+}
