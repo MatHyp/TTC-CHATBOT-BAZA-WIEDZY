@@ -6,39 +6,53 @@ import {AI} from "../../modules/API-Prompt/POST.js"
 function Chat({className}) {
 const [data, setData] = useState()
 const [loading, setLoading] = useState(true)
-const [messages, setMessages] = useState([
-  {
-    userText: "Cześć, AI!",
-    aiResponse:"",  
-    date: new Date().getTime()
-  },
-    {
-    userText: "Cześć, AI!",
-    aiResponse: "hello",  
-    date: new Date().getTime()
-  }
-]);
+const [messages, setMessages] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-		if(messages[messages.length - 1].userText!=""){
-      try {
-        const result = await AI(messages[messages.length - 1]?.userText);
-        setData(result);
-      } catch (err) {
-        console.log(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };}
 
-    fetchData();
-  }, [messages]); 
+
+ 
   
 const sortedMessages = [...messages].sort((a, b) => a.date - b.date);	
 const id = useId()
-const SendMess = (text) => {
-  if (!text.trim()) return; // ignoruj puste wiadomości
+const SendMess = async (text) => {
+  if (!text.trim()) return;
+
+  const newMessage = {
+    userText: text,
+    aiResponse: "",
+    date: Date.now()
+  };
+
+  // najpierw dodaj wiadomość użytkownika
+  setMessages(function(prevMessages) {
+    return [...prevMessages, newMessage];
+  });
+
+  try {
+    setLoading(true);
+
+    const result = await AI(text);
+
+    // teraz ustaw odpowiedź AI do OSTATNIEJ wiadomości
+	
+	
+	setMessages(function(prevMessages) {
+	  var newMessages = [...prevMessages];
+	  var lastIndex = newMessages.length - 1;
+	  newMessages[lastIndex] = {
+		...newMessages[lastIndex],
+		aiResponse: result.response
+	  };
+	  return newMessages;
+	});
+	
+	
+
+  } catch (err) {
+    console.log(err.message);
+  } finally {
+    setLoading(false);
+  }
 };
 
 
