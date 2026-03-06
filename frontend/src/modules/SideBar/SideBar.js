@@ -5,10 +5,6 @@ import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 function SideBar({className}) {
   const [showPanel, setShowPanel] = useState(true);
-  let showTopBurger
-  let showInsideBurger
-	showTopBurger = showPanel
-	showInsideBurger = !showPanel
    
 	const changeState = () => {
 	  setShowPanel(prev => !prev);
@@ -20,11 +16,11 @@ function SideBar({className}) {
 	
 		  return (
 			<>
-					<Burger DoAfterClick={changeState}   showBurger={showTopBurger} classCSS={style.BurgerMenu}/>
+					<Burger DoAfterClick={changeState}  showBurger={false} classCSS={showPanel==true ? style.BurgerAbsolute : style.BurgerMenu}/>
 				<div className={`${className} ${showPanel  ? style.sideBarLocal : style.sideBarLocalDezactive }`} >
 					<div className={style.Title}>
 						<h1>TTC Docktor</h1>
-						<div><Burger DoAfterClick={changeState}  showBurger={showInsideBurger} classCSS={style.BurgerAbsolute}/></div>
+						
 					</div>
 						<ul>
 						  <li className={style.MenuItem}>

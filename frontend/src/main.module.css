@@ -47,6 +47,7 @@
 body
 {
 	background-color:var(--primary-color);
+	anchor-name: --body;
 }
 :root {
   --primary-color: #212121; 
@@ -60,5 +61,7 @@ body
   --color-chat-prompt:white;
   --wait-animation-color:black;
   --wait-animation-color2:white;
+  --wait-animation-duration:2s;
    interpolate-size: allow-keywords;
+   
 }

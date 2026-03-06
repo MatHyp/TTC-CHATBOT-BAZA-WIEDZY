@@ -8,6 +8,7 @@
   height: 100%;
   flex-shrink: 0;
   anchor-name: --sideBar-anchor;
+  z-index:10;
   
 }
 
@@ -99,8 +100,11 @@ ul li
 .BurgerMenu
 {
 	position:absolute;
-	left: max(5%,10vh);
-	top:5%;
+	left:anchor(left);
+	top:anchor(top);
+	translate:90% 90%;
+	position-anchor:--body;
+	
 	
 	
 }
@@ -108,10 +112,10 @@ ul li
 {
 	position:absolute;
 	left:anchor(right);
-	top:calc(anchor(top) + 5vh);
+	top:anchor(top);
 	position-anchor:--sideBar-anchor;
-	translate:90% 
-	
+	translate:90% 90%;
+	transition:left 0.03s linear !important;
 	
 	
 }

@@ -18,10 +18,11 @@
 }
 .Burger
 {
+	
 	cursor: pointer;
 	position:absolute;
-	z-index:100;
-	transition:background-color 200ms ease-in-out;
+	z-index:1;
+	transition:left 300ms linear;
 }
 .ItemDisplayNone
 {
