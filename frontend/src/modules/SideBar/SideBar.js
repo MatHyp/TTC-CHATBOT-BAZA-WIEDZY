@@ -22,13 +22,13 @@ function SideBar({className}) {
 					<Burger DoAfterClick={changeState}  showBurger={false} classCSS={showPanel==true ? style.BurgerAbsolute : style.BurgerMenu}/>
 				<div className={`${className} ${showPanel  ? style.sideBarLocal : style.sideBarLocalDezactive }`} >
 					<div className={style.Title}>
-						<h1>TTC Docktor</h1>
+						<h1>Chat TTC</h1>
 						
 					</div>
 						<ul>
 						  <li className={style.MenuItem}>
 							<NavLink 
-							  to="/" 
+							  to="/c/" 
 							  className={({ isActive }) =>`${style.MenuLink} ${isActive ? style.MenuItemActive : ""}`}
 							  inert={!showPanel}>
 							  New Chat
@@ -43,7 +43,7 @@ function SideBar({className}) {
 										  <div className={style.chatsCointainer}>
 						  
 							{chats.slice().reverse().map((chat, index) => (
-									<NavLink to="/" className={({ isActive }) =>`${style.MenuLink} ${isActive ? style.MenuItemActive : ""} ${style.userChat}`} inert={!showPanel}>
+							<NavLink to={`/c/${chat.id}`} className={({ isActive }) =>`${style.MenuLink} ${style.MenuItemActive} ${style.userChat}`} inert={!showPanel}>
 										<li key={index}>
 											{chat.messages[0].userText}
 										</li>

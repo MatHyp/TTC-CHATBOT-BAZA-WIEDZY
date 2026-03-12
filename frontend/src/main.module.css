@@ -61,7 +61,7 @@ body
   --color-chat-prompt:white;
   --wait-animation-color:black;
   --wait-animation-color2:white;
-  --wait-animation-duration:2s;
+  --wait-animation-duration:3s;
    interpolate-size: allow-keywords;
    
 }

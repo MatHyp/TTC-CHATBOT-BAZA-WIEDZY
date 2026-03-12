@@ -4,43 +4,63 @@ import {UserMes , AiMes} from "../../modules/Messages/Messages";
 import { useState, useEffect, useId } from "react";
 import {AI} from "../../modules/API-Prompt/POST.js"
 import { db } from "../../db.js";
-
+import { useParams, useNavigate  } from 'react-router-dom'
 
 
 
 function Chat({className}) {
+	const {id}= useParams()
+	
+		
 	const [data, setData] = useState()
 	const [loading, setLoading] = useState(true)
 	const [chatId, setChatId] = useState(null);
+
 	const [messages, setMessages] = useState([]);
+	const navigate = useNavigate();
 		useEffect(() => {
 		  async function saveChat() {
-
-			if (!messages.length) return;
-
-			// jeśli chat jeszcze nie istnieje
+			if (!messages.length	) return;
 			if (!chatId) {
 			  const id = await db.chats.add({
 				messages
 			  });
-
 			  setChatId(id);
-			}
-
-			// jeśli chat już istnieje → update
+			  navigate(`/c/${id}`, { replace: true });
+			} 
 			else {
 			  await db.chats.update(chatId, {
 				messages
 			  });
 			}
 		  }
-
 		  saveChat();
-
 		}, [messages]);
+useEffect(() => {
+  const loadChat = async () => {
+    if (id == null) {
+      // nowy czat, pusty
+	  
+      setMessages([]);
+      setChatId(null);
+      setLoading(false);
+      return;
+    }
+	
 
+    // wczytanie istniejącego chatu z DB
+    const chat = await db.chats.get(Number(id));
+    if (chat) {
+      setMessages(chat.messages || []);
+      setChatId(Number(id));
+    }
+    setLoading(false);
+  };
+
+  loadChat();
+}, [id]);
 	const sortedMessages = [...messages].sort((a, b) => a.date - b.date);	
-	const id = useId()
+	
 	const SendMess = async (text) => {
 	  if (!text.trim()) return;
 
@@ -86,11 +106,11 @@ function Chat({className}) {
 	  return (
 		<div className={className}>
 		  <div  className={style.chatBox}>
-			  {/*Wyswietla Prompty i odpowiedzi z messages(6 linijka obecnie)*/}
+			  {/*Wyswietla Prompty i odpowiedzi z messages*/}
 			{sortedMessages.map((msg, index) => (
-			  <div className={style.test}> 
-				<UserMes mesDate={msg.date} key={id} Text={msg.userText} AiText={msg.aiResponse} />
-				{msg.aiResponse && <AiMes kkey={id}  Text={msg.aiResponse} />}
+			  <div className={style.test}  key={msg.date}> 
+				<UserMes mesDate={msg.date}  Text={msg.userText} AiText={msg.aiResponse} />
+				{msg.aiResponse && <AiMes   Text={msg.aiResponse} />}
 			  </div>
 			))}
 		  </div>

@@ -9,10 +9,12 @@ function App() {
     <div className={style.MainDiv}>
       <SideBar className={style.SideBar} />
         <Routes>
-          <Route path="/" element={<div className={style.Chat}><Chat /></div>} />
+		  <Route path="/c/:id?" element={<div className={style.Chat}><Chat /></div>} />
+		
           <Route path="/API" element={<div className={style.API}><h1>TU bedzie opisane API czy cos</h1></div>} />
           <Route path="/login" element={<div className={style.Login}><h1>TU bedzie logowanie wpisanie klucza czy czego</h1></div>} />
-        </Routes>
+		  
+		</Routes>
     </div>
   );
 }
