@@ -93,7 +93,7 @@ Baza wiedzy ChromaDB będzie zawierać **zindeksowane dokumenty** dotyczące szk
 | Kategoria | Przykładowe dane |
 |---|---|
 | 🏫 Ogólne | Historia szkoły, misja, wartości, adres |
-| 📖 Kierunki | Technik programista, technik informatyk, opisy przedmiotów |
+| 📖 Kierunki | Technik informatyk, opisy przedmiotów |
 | 🗓️ Plan lekcji | Godziny dzwonków, rozkład zajęć |
 | 📋 Regulaminy | Statut szkoły, regulamin ucznia, zasady oceniania |
 | 📅 Wydarzenia | Kalendarz roku szkolnego, wycieczki, olimpiady |
