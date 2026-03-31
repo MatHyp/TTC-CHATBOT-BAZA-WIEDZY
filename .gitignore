@@ -25,4 +25,5 @@ yarn-error.log*
 .env
 
 chromadb-data-seed/chroma_db
+school_vector_db
 venv

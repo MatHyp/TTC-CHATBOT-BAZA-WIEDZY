@@ -1,4 +1,0 @@
-pandas
-chromadb
-sentence-transformers
-huggingface_hub
