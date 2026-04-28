@@ -1,6 +1,0 @@
-{
-  "scripts": {
-    "install": "cd frontend && npm install",
-    "start": "npm --prefix frontend start"
-  }
-}

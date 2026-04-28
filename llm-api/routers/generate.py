@@ -1,13 +1,15 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from src.search import retrival_search
+from src.chatbot import Chatboot 
 from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer
 import torch
 import os
 from dotenv import load_dotenv # <-- Import this
 
-# Load environment variables from your .env file
 load_dotenv() # <-- Add this line
+
+chatbot = Chatboot()
 
 class ChatRequest(BaseModel):
     prompt: str
@@ -16,31 +18,23 @@ class ChatRequest(BaseModel):
 
 router = APIRouter(prefix="/v1", tags=["Generate"])
 
-# Now these will properly grab the values from your .env file
-APP_API_KEY = os.getenv("APP_PUBLIC_API_KEY")
-HF_TOKEN = os.getenv("HUGGINGFACE_TOKEN") 
-API_KEY_NAME = "X-API-Key"
-MODEL_ID = "meta-llama/Llama-3.2-3B-Instruct"
-tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, token=HF_TOKEN)
-model = AutoModelForCausalLM.from_pretrained(
-    MODEL_ID,
-    token=HF_TOKEN,
-    torch_dtype=torch.bfloat16,
-    device_map="auto"
-)
-
-pipe = pipeline("text-generation", model=model, tokenizer=tokenizer)
     
 @router.post("/generate")
 async def generate_text(request: ChatRequest):
     try:
-        results = pipe(
-            request.prompt,
-            max_new_tokens=request.max_tokens,
-                temperature=request.temperature,
-            do_sample=True if request.temperature > 0 else False,
-            pad_token_id=tokenizer.eos_token_id
-        )
-        return {"response": results[0]['generated_text']}
+        results = retrival_search(request.prompt)
+        context = results[1] 
+
+        prompt = f"""Jesteś pomocnym asystentem AI. Twoim zadaniem jest udzielenie precyzyjnej odpowiedzi na pytanie użytkownika.
+                Opieraj swoją odpowiedź WYŁĄCZNIE na poniższym kontekście dostarczonym z bazy wiedzy. Jeśli odpowiedź nie znajduje 
+                się w kontekście, poinformuj o tym, nie wymyślaj własnych faktów. Odpowiadaj jak najkrocej sie da
+                Kontekst:
+                {context}
+                Pytanie użytkownika:
+                {request.prompt}
+                Odpowiedź:"""
+
+        ai_response = chatbot(prompt)
+        return {"response": ai_response}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

@@ -27,3 +27,6 @@ yarn-error.log*
 chromadb-data-seed/chroma_db
 school_vector_db
 venv
+
+llm-api/__pycache__
+llm-api/cache-dir
